@@ -4,8 +4,10 @@
   "description": "Template repository for JS",
   "main": "index.js",
   "scripts": {
+    "dev": "backpack",
+    "build": "backpack build",
     "test": "echo \"Error: no test specified\" && exit 1",
-		"format": "standard --fix"
+    "format": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -25,12 +27,22 @@
     "lint-staged": "^9.4.2",
     "standard": "^14.3.1"
   },
-	"lint-staged": {
-		"*.js": ["npm run format", "git add"]
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	}
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "apollo-server": "^2.9.13",
+    "express-graphql": "^0.9.0",
+    "gql": "^1.1.2",
+    "graphql": "^14.5.8",
+    "node-fetch": "^2.6.0"
+  }
 }
