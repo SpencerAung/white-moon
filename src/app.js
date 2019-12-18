@@ -2,13 +2,7 @@ const express = require('express')
 const graphqlHTTP = require('express-graphql')
 
 const schema = require('./schema')
-const { fetchCurrencies } = require('./api')
-
-const resolvers = {
-  currencies: () => {
-    return fetchCurrencies()
-  }
-}
+const resolvers = require('./resolvers')
 
 const app = express()
 app.set('port', 3000)
