@@ -1,7 +1,8 @@
 const express = require('express')
 const graphqlHTTP = require('express-graphql')
 const { buildSchema } = require('graphql')
-const fetch = require('node-fetch')
+
+const { fetchQuery } = require('./api')
 
 const schema = buildSchema(`
   enum  CurrencyType {
@@ -30,12 +31,6 @@ const schema = buildSchema(`
     currencies: [Currency]
   }
 `)
-
-const fetchQuery = async (url) => {
-  const res = await fetch(url)
-  const data = await res.json()
-  return data.result
-}
 
 const parseCurrencies = (currencies) => {
   if (!Array.isArray(currencies)) {
