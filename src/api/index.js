@@ -1,7 +1,9 @@
 const fetch = require('node-fetch')
 
-const fetchQuery = async (url) => {
-  const res = await fetch(url)
+const apiUrl = process.env.API_ENDPOINT
+
+const fetchQuery = async (resourceEndPoint) => {
+  const res = await fetch(apiUrl + resourceEndPoint)
   const data = await res.json()
   return data.result
 }
@@ -20,7 +22,7 @@ const parseCurrencies = (currencies) => {
 }
 
 const fetchCurrencies = async () => {
-  const currencies = await fetchQuery('https://api-9f2d25efde52db4ab5bc.korbit.co.kr/v1/currencies')
+  const currencies = await fetchQuery('/currencies')
   return parseCurrencies(currencies)
 }
 
