@@ -1,7 +1,8 @@
-const { fetchCurrencies } = require('./api')
+const { fetchCurrencies } = require('../../api')
 
 const userInfo = { name: 'John', email: 'john@test.com' }
-const resolvers = {
+
+module.exports = {
   currencies: () => {
     return fetchCurrencies()
   },
@@ -13,5 +14,3 @@ const resolvers = {
     return userInfo
   }
 }
-
-module.exports = resolvers

@@ -1,6 +1,6 @@
-const { buildSchema } = require('graphql')
+const { gql } = require('apollo-server-express')
 
-const schema = buildSchema(`
+const schema = gql`
   enum  CurrencyType {
     FIAT
     CRYPTO
@@ -32,6 +32,10 @@ const schema = buildSchema(`
     currencies: [Currency]
     userInfo: UserInfo
   }
-`)
+
+  type Mutation {
+    signIn(email: String, password: String): UserInfo
+  }
+`
 
 module.exports = schema

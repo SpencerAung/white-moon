@@ -1,7 +1,7 @@
 module.exports = {
   webpack: (config, options, webpack) => {
     config.entry.main = [
-      './src/server.js'
+      './src/app.js'
     ]
 
     return config
