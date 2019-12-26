@@ -1,16 +1,16 @@
-const { fetchCurrencies } = require('../../api')
+const { AuthenticationError } = require('apollo-server-express')
 
-const userInfo = { name: 'John', email: 'john@test.com' }
+const { fetchCurrencies } = require('../../api')
 
 module.exports = {
   currencies: () => {
     return fetchCurrencies()
   },
-  userInfo: (args, req) => {
-    if (req.user) {
-      return null
+  userInfo: (_, __, context) => {
+    const { user } = context
+    if (!user) {
+      return new AuthenticationError('Unauthorized')
     }
-
-    return userInfo
+    return user
   }
 }
