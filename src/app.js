@@ -7,7 +7,7 @@ const compression = require('compression')
 const requestIp = require('request-ip')
 const useragent = require('express-useragent')
 
-const { typeDefs, resolvers, context } = require('./schema')
+const { typeDefs, resolvers, context, formatError } = require('./schema')
 
 require('dotenv').config(path.resolve(__dirname, '../.env'))
 
@@ -15,7 +15,8 @@ const app = express()
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context
+  context,
+  formatError
 })
 
 app.set('port', process.env.PORT || 3000)
