@@ -23,8 +23,14 @@ const schema = buildSchema(`
     type: CurrencyType
   }
 
+  type UserInfo {
+    name: String
+    email: String
+  }
+
   type Query {
     currencies: [Currency]
+    userInfo: UserInfo
   }
 `)
 
