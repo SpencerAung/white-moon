@@ -1,14 +1,14 @@
 # White Moon
 POC - graphql node.js server
 
-# Built With
+### Built With
 
 * express
 * apollo-server-express
 
-# Getting Started
+## Getting Started
 
-## Installation
+### Installation
 
 Clone the repo
 ```
@@ -25,14 +25,14 @@ Update your environment variables
 cp .env.sample .env
 ```
 
-## Running
+### Running
 
 To start a dev sever, run 
 ```
 npm run dev
 ```
 
-## Building
+### Building
 
 To make a production build, run
 ```
