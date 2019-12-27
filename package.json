@@ -1,7 +1,7 @@
 {
-  "name": "blue-water",
+  "name": "white-moon",
   "version": "1.0.0",
-  "description": "Template repository for JS",
+  "description": "Graphql node.js server POC",
   "main": "index.js",
   "scripts": {
     "dev": "backpack",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SpencerAung/blue-water.git"
+    "url": "git+https://github.com/SpencerAung/white-moon.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SpencerAung/blue-water/issues"
+    "url": "https://github.com/SpencerAung/white-moon/issues"
   },
-  "homepage": "https://github.com/SpencerAung/blue-water#readme",
+  "homepage": "https://github.com/SpencerAung/white-moon#readme",
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "backpack-core": "^0.8.4",
