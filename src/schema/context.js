@@ -1,16 +1,4 @@
-const jwt = require('jsonwebtoken')
-
-const getUser = (token) => {
-  return new Promise((resolve, reject) => {
-    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-      if (err) {
-        reject(err)
-      }
-
-      resolve(decoded)
-    })
-  })
-}
+const { getUser } = require('../auth')
 
 module.exports = async ({ req, res }) => {
   const authorization = req.headers.authorization || ''

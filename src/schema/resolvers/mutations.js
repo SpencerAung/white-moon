@@ -1,28 +1,6 @@
-const jwt = require('jsonwebtoken')
 const { AuthenticationError } = require('apollo-server-express')
 
-const createToken = ({ id, email, name }) => {
-  return new Promise((resolve, reject) => {
-    jwt.sign({
-      sub: id,
-      email,
-      name
-    }, process.env.JWT_SECRET, { expiresIn: '1h' },
-    (err, token) => {
-      if (err) {
-        reject(err)
-      }
-      resolve(token)
-    })
-  })
-}
-
-const user = {
-  id: 'user-123',
-  name: 'Spencer',
-  email: 'spencer@test.com',
-  password: 'hello-spence!'
-}
+const { createToken, user } = require('../../auth')
 
 module.exports = {
   signIn: async (_, args, context) => {
