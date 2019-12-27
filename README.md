@@ -1,10 +1,15 @@
 # White Moon
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 POC - graphql node.js server
 
 ### Built With
 
 * express
 * apollo-server-express
+
+### Code Style
+Code style and linting with Standardjs.
 
 ## Getting Started
 
@@ -31,6 +36,7 @@ To start a dev sever, run
 ```
 npm run dev
 ```
+You can find graphql endpoint at `/graphql`
 
 ### Building
 
